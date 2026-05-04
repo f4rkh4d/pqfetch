@@ -3,6 +3,10 @@
 TLS post-quantum readiness scanner. tells you, in one line per host, whether the server negotiates a hybrid post-quantum key exchange (`X25519MLKEM768`) or a classical one.
 
 [![crates.io](https://img.shields.io/crates/v/pqfetch.svg)](https://crates.io/crates/pqfetch)
+[![docs.rs](https://img.shields.io/docsrs/pqfetch)](https://docs.rs/pqfetch)
+[![downloads](https://img.shields.io/crates/d/pqfetch.svg)](https://crates.io/crates/pqfetch)
+[![ci](https://github.com/f4rkh4d/pqfetch/actions/workflows/ci.yml/badge.svg)](https://github.com/f4rkh4d/pqfetch/actions)
+[![msrv](https://img.shields.io/badge/msrv-1.74-blue.svg)](#)
 [![license](https://img.shields.io/crates/l/pqfetch.svg)](#license)
 
 ## why
