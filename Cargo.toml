@@ -1,0 +1,32 @@
+[package]
+name = "pqfetch"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "TLS post-quantum readiness scanner. tells you whether each host negotiates a hybrid kex (X25519MLKEM768)."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/f4rkh4d/pqfetch"
+readme = "README.md"
+keywords = ["post-quantum", "tls", "scanner", "kyber", "ml-kem"]
+categories = ["command-line-utilities", "cryptography", "network-programming"]
+
+[[bin]]
+name = "pqfetch"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rustls = { version = "0.23", default-features = false, features = ["std", "tls12", "aws-lc-rs", "prefer-post-quantum"] }
+rustls-pki-types = "1"
+webpki-roots = "0.26"
+anyhow = "1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
